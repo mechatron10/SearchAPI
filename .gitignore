@@ -1,0 +1,7 @@
+# Ignore virtual environment folder
+myenv/
+
+# Ignore Python bytecode files
+__pycache__/
+#ignore the local o
+.vscode/
