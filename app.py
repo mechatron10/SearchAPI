@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 import requests
 from flask_caching import Cache
 from datetime import datetime
-from flask_cors import CORS
+# from flask_cors import CORS
 
 app = Flask(__name__)
 # if __name__ == "__main__":
