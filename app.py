@@ -18,8 +18,8 @@ if response.status_code == 200:
     # Cache the comments_data for 1 hour (you can adjust the timeout as needed)
     cache.set('comments_data', comments_data, timeout=3600)
 else:
-    print("Failed to fetch data from the API.")
-    comments_data = []  # Initialize with an empty list in case of an error
+    error_message = "Failed to fetch data from the API."
+    print(error_message)
 
 @app.route("/search", methods=["GET"])
 def get_comments():
