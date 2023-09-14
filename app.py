@@ -2,8 +2,11 @@ from flask import Flask, request, jsonify
 import requests
 from flask_caching import Cache
 from datetime import datetime
+from flask_cors import CORS
 
 app = Flask(__name__)
+ # Configure CORS to allow requests from your local frontend during development
+CORS(app, resources={r"/search": {"origins": "http://127.0.0.1:5500/index.html"}})
 cache = Cache(app,config={'CACHE_TYPE': 'simple'})
 base_url = "https://app.ylytic.com/ylytic/test"
 
@@ -71,6 +74,4 @@ def get_comments():
     return jsonify(filtered_comments)
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080, debug=True)
-
-
+  app.run(host="0.0.0.0", port=8080)
