@@ -57,7 +57,11 @@ def get_comments():
             like = comment.get("like", 0) 
             reply = comment.get("reply", 0) 
             text = comment.get("text", "").lower()
-
+            try:
+                  at_datetime = datetime.strptime(at, "%a, %d %b %Y %H:%M:%S %Z")
+            except ValueError:
+                    at_datetime = None  # Handle invalid 'at' values as None
+             
             # Perform comparisons using strings
             if (
                 (search_author is None or search_author.lower() in author) and
