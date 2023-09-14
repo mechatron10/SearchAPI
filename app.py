@@ -6,7 +6,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
  # Configure CORS to allow requests from your local frontend during development
-CORS(app, resources={r"/search": {"origins": "http://127.0.0.1:5500/index.html"}})
+CORS(app, resources={r"/search": {"origins": "https://frontend-search-api.vercel.app"}})
 cache = Cache(app,config={'CACHE_TYPE': 'simple'})
 base_url = "https://app.ylytic.com/ylytic/test"
 
