@@ -5,7 +5,9 @@ from datetime import datetime
 from flask_cors import CORS
 
 app = Flask(__name__)
-
+if __name__ == "__main__":
+    # Listen on all public IPs (0.0.0.0) and port 8080
+    app.run(host="0.0.0.0", port=8080)
 # Configure CORS to allow requests from your local frontend during development
 CORS(app, resources={r"/search": {"origins": "http://127.0.0.1:5500/index.html"}})
 cache = Cache(app,config={'CACHE_TYPE': 'simple'})
