@@ -77,7 +77,7 @@ def get_comments():
                 (reply_from is None or reply >= int(reply_from)) and
                 (reply_to is None or reply <= int(reply_to)) and
                 all(word in comment_words for word in search_words) and  # Check if all words in search_text are present in text
-                ' '.join(search_words) in ' '.join(comment_words)
+                ' '.join(search_words) in ' '.join(comment_words)  # Check if search_words appear in comment_words
             ):
                 filtered_comments.append(comment)
 
